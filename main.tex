@@ -4,10 +4,13 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{tikz-cd}
 
 \usepackage{verbatim}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+
+\usepackage[colorinlistoftodos]{todonotes}
 
 \newcommand{\loops}{\Omega}
 \newcommand{\susp}{\Sigma}
@@ -15,24 +18,30 @@
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{defin}{Definition}[section]
-\newtheorem{propos}{Proposition}[section]
-\newtheorem{example}{Example}[section]
-\newtheorem{cor}{Corollary}[section]
+\newtheorem{defin}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
 
-\title{Hilton-Milnor splitting in homotopy type theory}
+\newcommand{\pr}{\ensuremath{\mathsf{pr}}}
+\newcommand{\hfiber}{\ensuremath{\mathsf{hfiber}}}
+\newcommand{\concat}{\ensuremath{\mathsf{concat}}}
+
+
+\title{Hilton-Milnor Splitting in HoTT}
 \author{Ali Caglayan}
 
 \begin{document}
-
+    
     \maketitle
+    \todo{Title okay?}
+    
 
     \begin{abstract}
-        We show in HoTT that for pointed types $X, Y$ we have a pointed equivalence:
-            \begin{equation*}
-                \loops X(X \vee Y) \simeq \loops X \times \loops Y \times \loops \susp (\loops X \wedge \loops Y)
-            \end{equation*}
+        \todo{Abstract needs to be fleshed out}
+        We show in homotopy type theory that for pointed types $X, Y$ we have a pointed equivalence:
+        $\loops (X \vee Y) \simeq \loops X \times \loops Y \times \loops \susp (\loops X \wedge \loops Y)$
         known as the Hilton-Milnor splitting.
         \begin{comment}
          Observing that this can be iterated we can observe that:
@@ -47,9 +56,11 @@
 
     \section{Introduction}
 
+    \input {intro.tex}
+
     \section{Homotopy pullbacks and descent}
     
-    %\input{descent.tex}
+    \input{descent.tex}
     
     \section{The Hilton-Milnor splitting}
 

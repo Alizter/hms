@@ -1,28 +1,7 @@
 
-%\newcommand{\pr1}{\ensuremath{\mathsf{pr}_1}}
-%\newcommand{\pr2}{\ensuremath{\mathsf{pr}_2}}
-\newcommand{\hfiber}{\ensuremath{\mathsf{hfiber}}}
-\newcommand{\concat}{\ensuremath{\mathsf{concat}}}
 
-\begin{lemma}[Splitting lemma]
-    Let $f : X \to_* Y$ be a pointed map. Let $g : \loops Y \to_* \loops X$ be a section of $\loops f$. Then the composition of pointed maps
-    
-    \begin{equation*}
-        \loops B \times \loops \hfiber(f) \xrightarrow{g \times \mathsf{pr}_1}_*
-            \loops A \times \loops A \xrightarrow{\concat}_* \loops A    
-    \end{equation*}
-    is an equivalence of pointed types.
 
-\end{lemma}
-
-%% TODO
-%
-%   1. Work out how to draw 3D diagrams
-%   2. Fiber of X \/ Y -> X x Y
-%   3. 
-%
-
-\begin{theorem}[Hilton-Milnor Splitting]
+\begin{theorem}[Hilton-Milnor splitting]
     Let $X, Y$ be pointed types. Then there is a pointed equivalence:
     \begin{equation*}
         \loops (X \vee Y) \simeq \loops X \times \loops Y \times \loops \susp (\loops X \wedge \loops Y)

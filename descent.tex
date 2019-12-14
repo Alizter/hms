@@ -1,0 +1,91 @@
+
+
+\begin{lemma}[Splitting lemma]
+    Let $f : X \to_* Y$ be a pointed map. Let $g : \loops Y \to_* \loops X$ be a section of $\loops f$. Then the composition of pointed maps
+    
+    \begin{equation*}
+        \loops B \times \loops \hfiber(f) \xrightarrow{g \times \mathsf{pr}_1}_*
+            \loops A \times \loops A \xrightarrow{\concat}_* \loops A    
+    \end{equation*}
+    is an equivalence of pointed types.
+
+\end{lemma}
+
+
+% Cite Rijke Theorem 2.2.11
+\begin{theorem}[Descent]
+    \todo{Statement and version for pointed types}
+    \begin{equation*}
+        \begin{tikzcd}[row sep=scriptsize, column sep=scriptsize]
+            A \ar[dr] \ar[rr] \ar[dd] & & B \ar[dr] \ar[dd] \\
+            & C \ar[rr, crossing over] & & D \ar[dd] \\
+            A' \ar[dr] \ar[rr] & & B' \ar[dr] \\
+            & C' \ar[rr] \ar[from=uu, crossing over] & & D' \\
+        \end{tikzcd}
+    \end{equation*}
+
+\end{theorem}
+
+
+\begin{lemma}[Two-pullbacks lemma]
+    Let \todo{Needs proof and proper statement. Also a note about pointed version. }
+    \begin{equation*}
+        \begin{tikzcd}[row sep=large, column sep=large]
+            A \ar[r] \ar[d] & B \ar[r] \ar[d] & C \ar[d] \\
+            D \ar[r] & E \ar[r] & F \\
+        \end{tikzcd}
+    \end{equation*}
+\end{lemma}
+
+\begin{defin}[Wedge sum]
+    Let $X, Y$ be pointed types. Define the \emph{wedge sum} (or simply \emph{wedge}) of $X$ and $Y$, denoted $X \vee Y$ to be the following pushout:
+    \begin{equation*}
+        \begin{tikzcd}[row sep=large, column sep=large]
+            1 \ar[r] \ar[d] \ar[dr, phantom, "\ulcorner", very near start] & X \ar[d] \\
+            Y \ar[r] & X \vee Y
+        \end{tikzcd}
+    \end{equation*}
+    \todo{Wedge induction, recursion, "constructors"}
+\end{defin}
+
+\begin{defin}[Wedge inclusion]
+    There is a map $\omega : X \vee Y \to X \times Y$ called the wedge inclusion. Defined by wedge recursion:
+    \begin{itemize}
+        \item $\mathsf{winl}(x) \mapsto (x, *)$
+        \item $\mathsf{winr}(y) \mapsto (*, y)$
+        \item $\mathsf{wglue} \mapsto \mathsf{refl}_{(*,*)}$
+    \end{itemize}
+\end{defin}
+
+% Cite Devalapurkar-Haine
+\begin{lemma}[Fiber of wedge inclusion]
+    There is a pointed equivalence
+    \begin{equation*}
+        \hfiber(\omega) \simeq \loops X * \loops Y
+    \end{equation*}
+\end{lemma}
+
+\begin{proof}
+    We have zero maps $\loops X \to Y$ and $\loops Y \to X$. We have maps $\loops Y \to \hfiber(\omega)$ which takes $p : \loops Y$ and maps it to $(*, \mathsf{pair}^= (\mathsf{refl}, p))$ and likewise for $\loops X \to \hfiber(\omega)$.
+    Observe that the following diagram commutes:
+    \begin{equation*}
+        \begin{tikzcd}
+            \loops X \times \loops Y \ar[rr, "\pr_1"] \ar[dd] \ar[rd, "\pr_2"] & & \loops X \ar[dd] \ar[rd] \\
+            & \loops Y \ar[rr, crossing over] & & \hfiber(\omega) \ar[rr] \ar[dd] & & 1 \ar[dd] \\
+            1 \ar[rr] \ar[rd] & & Y \ar[rd, "\mathsf{winr}"] \\
+            & X \ar[from=uu, crossing over] \ar[rr, "\mathsf{winl}"] & & X \vee Y \ar[rr, "\omega"] & & X \times Y \\
+        \end{tikzcd}
+    \end{equation*}
+    Now the left and back faces of the cube are pullbacks. The bottom face is a pushout by definition. The front and right faces are pullbacks since the commutative square joined with the right square is a pullback by definition, therefore by the pullback lemma they are pullbacks. Hence by descent the top square is a pushout. Observe that the pushout of the top square is the join $\loops X * \loops Y$ hence $\hfiber(\omega) \simeq \loops X * \loops Y$.
+\end{proof}
+
+\begin{lemma}[Join as a suspended smash]
+    We have the following pointed equivalence for pointed types $X$ and $Y$:
+    \begin{equation*}
+        X * Y \simeq \susp (X \wedge Y)
+    \end{equation*}
+\end{lemma}
+
+\begin{remark}
+    Thus $\hfiber(\omega) \simeq \susp (\loops X \wedge \loops Y)$
+\end{remark}
