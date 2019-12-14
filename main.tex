@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{graphicx}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\newcommand{\loops}{\Omega}
+\newcommand{\susp}{\Sigma}
+\newcommand{\N}{\mathbb{N}}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{defin}{Definition}[section]
+\newtheorem{propos}{Proposition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{cor}{Corollary}[section]
+
+\title{Hilton-Milnor splitting in homotopy type theory}
+\author{Ali Caglayan}
+
+\begin{document}
+
+    \maketitle
+
+    \begin{abstract}
+        We show in HoTT that for pointed types $X, Y$ we have a pointed equivalence:
+            \begin{equation*}
+                \loops X(X \vee Y) \simeq \loops X \times \loops Y \times \loops \susp (\loops X \wedge \loops Y)
+            \end{equation*}
+        known as the Hilton-Milnor splitting.
+        \begin{comment}
+         Observing that this can be iterated we can observe that:
+            \begin{equation*}
+                \loops \susp (X \vee Y) \simeq \loops \susp X \times \loops \susp Y \times \loops \susp
+                    \left(
+                        \bigvee_{i, j : \N} X^{\wedge i} \wedge Y^{\wedge j}
+                    \right)
+            \end{equation*}
+        \end{comment}
+    \end{abstract}
+
+    \section{Introduction}
+
+    \section{Homotopy pullbacks and descent}
+    
+    %\input{descent.tex}
+    
+    \section{The Hilton-Milnor splitting}
+
+    \input{hms.tex}
+
+\end{document}
