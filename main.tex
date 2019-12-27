@@ -1,35 +1,11 @@
 \documentclass{article}
-\usepackage{graphicx}
 
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amsthm}
-\usepackage{tikz-cd}
+\input{preamble.tex}
 
-\usepackage{verbatim}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-
-\usepackage[colorinlistoftodos]{todonotes}
-
-\newcommand{\loops}{\Omega}
-\newcommand{\susp}{\Sigma}
-\newcommand{\N}{\mathbb{N}}
-
-\theoremstyle{definition}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{defin}[theorem]{Definition}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{cor}[theorem]{Corollary}
-\newtheorem{prop}[theorem]{Proposition}
-\newtheorem{remark}[theorem]{Remark}
-
-\newcommand{\pr}{\ensuremath{\mathsf{pr}}}
-\newcommand{\hfiber}{\ensuremath{\mathsf{hfiber}}}
-\newcommand{\concat}{\ensuremath{\mathsf{concat}}}
-
+\addbibresource{hms.bib}
 
 \title{Hilton-Milnor Splitting in HoTT}
+
 \author{Ali Caglayan}
 
 \begin{document}
@@ -65,5 +41,7 @@
     \section{The Hilton-Milnor splitting}
 
     \input{hms.tex}
+    
+    \printbibliography
 
 \end{document}

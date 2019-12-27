@@ -2,3 +2,15 @@
 *.aux
 
 *.log
+
+*.bbl
+
+*.bcf
+
+*.xml
+
+*.blg
+
+*.fdb_latexmk
+
+*.fls
